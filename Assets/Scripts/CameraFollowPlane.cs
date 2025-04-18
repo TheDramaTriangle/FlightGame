@@ -10,8 +10,8 @@ public class CameraFollowPlane : MonoBehaviour
     public float smoothSpeed = 10f; 
     void LateUpdate()
     {
-        Vector3 desiredPosition = playerPlane.position + offset; 
+        Vector3 desiredPosition = playerPlane.position + playerPlane.rotation * offset; 
         transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.LookAt(playerPlane);
+        transform.rotation = Quaternion.Slerp(transform.rotation, playerPlane.rotation, smoothSpeed * Time.deltaTime);
     }
 }
