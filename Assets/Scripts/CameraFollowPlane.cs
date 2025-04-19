@@ -11,6 +11,9 @@ public class CameraFollowPlane : MonoBehaviour
 
     void LateUpdate()
     {
+        if (playerPlane == null)
+            return; 
+
         Vector3 desiredPosition = playerPlane.position + playerPlane.rotation * offset; 
         transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         transform.rotation = Quaternion.Slerp(transform.rotation, playerPlane.rotation, smoothSpeed * Time.deltaTime);
