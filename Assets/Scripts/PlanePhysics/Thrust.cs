@@ -2,8 +2,8 @@ using UnityEditor;
 using UnityEngine;
 
 /* 
-    Thrust keeps the plane moving in a direction 
-    Constant speed 
+    Thrust keeps the plane moving in the forward 
+    direction at a constant speed 
 */
 public class Thrust : MonoBehaviour
 {
