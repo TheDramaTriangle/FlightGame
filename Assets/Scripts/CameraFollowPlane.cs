@@ -7,11 +7,12 @@ public class CameraFollowPlane : MonoBehaviour
 {
     public Transform playerPlane;  
     public Vector3 offset = new(0, 1, -3); 
-    public float smoothSpeed = 10f; 
+    public float smoothSpeed = 3f; 
+
     void LateUpdate()
     {
-        Vector3 desiredPosition = playerPlane.position + offset; 
+        Vector3 desiredPosition = playerPlane.position + playerPlane.rotation * offset; 
         transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.LookAt(playerPlane);
+        transform.rotation = Quaternion.Slerp(transform.rotation, playerPlane.rotation, smoothSpeed * Time.deltaTime);
     }
 }
