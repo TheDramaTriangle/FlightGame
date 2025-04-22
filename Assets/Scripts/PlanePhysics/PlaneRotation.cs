@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Rotation : MonoBehaviour
+public class PlaneRotation : MonoBehaviour
 {
     public float rotationSpeed = 200f; 
 
