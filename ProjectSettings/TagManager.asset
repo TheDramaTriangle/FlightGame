@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Obstacle
+  - Defense
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
