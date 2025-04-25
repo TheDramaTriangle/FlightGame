@@ -1,30 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlaneRotation : MonoBehaviour
 {
-    public float rotationSpeed = 200f; 
+    public float YawAmount = 120;
+    private float Yaw;
 
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            float xRotationSpeed = -rotationSpeed * Time.deltaTime; 
-            transform.Rotate(xRotationSpeed, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            float xRotationSpeed = rotationSpeed * Time.deltaTime; 
-            transform.Rotate(xRotationSpeed, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            float zRotationSpeed = -rotationSpeed * Time.deltaTime; 
-            transform.Rotate(0, 0, zRotationSpeed);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            float zRotationSpeed = rotationSpeed * Time.deltaTime; 
-            transform.Rotate(0, 0, zRotationSpeed);
-        }
+    void Start() {
+    }
+
+    void Update() {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        Yaw += horizontalInput * YawAmount * Time.deltaTime;
+        float pitch = Mathf.Lerp(0, 20, Mathf.Abs(verticalInput)) * Mathf.Sign(verticalInput);
+        float roll = Mathf.Lerp(0, 30, Mathf.Abs(horizontalInput)) * -Mathf.Sign(horizontalInput);
+
+        transform.localRotation = Quaternion.Euler(Vector3.up * Yaw + Vector3.right * pitch + Vector3.forward * roll);
     }
 }
