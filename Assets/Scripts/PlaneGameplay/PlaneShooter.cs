@@ -1,4 +1,5 @@
 
+using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class PlaneShooter : MonoBehaviour
@@ -12,7 +13,8 @@ public class PlaneShooter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
             Shoot();
-            SoundManager.Instance.PlayShootingSound(); 
+            EventManager.Notify<GameEvent.PlaneShoot>();
+
         }
     }
 

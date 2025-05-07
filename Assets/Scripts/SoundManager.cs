@@ -1,5 +1,8 @@
 
 
+
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -8,6 +11,17 @@ public class SoundManager : MonoBehaviour
     public AudioSource shootingAudioSource;
     public AudioSource musicAudioSource;
     public AudioSource explosionAudioSource;
+
+
+    void OnEnable()
+    {
+        EventManager.Subscribe<GameEvent.PlaneShoot>(PlayShootingSound);
+    }
+
+    void OnDisable()
+    {
+        EventManager.Unsubscribe<GameEvent.PlaneShoot>(PlayShootingSound);
+    }
 
     void Awake()
     {
