@@ -8,40 +8,32 @@ public class GameManager : MonoBehaviour
     public DefenseHealth defenseHealth;
     public float restartWaitSeconds = 3f;
 
+    void OnEnable()
+    {
+        EventManager.Subscribe<GameEvent.PlaneCrash>(RestartGame);
+        EventManager.Subscribe<GameEvent.DefenseDestroyed>(RestartGame);
+        EventManager.Subscribe<GameEvent.AllEnemiesDead>(RestartGame);
+    }
+
+    void OnDisable()
+    {
+        EventManager.Unsubscribe<GameEvent.PlaneCrash>(RestartGame);
+        EventManager.Unsubscribe<GameEvent.DefenseDestroyed>(RestartGame);
+        EventManager.Unsubscribe<GameEvent.AllEnemiesDead>(RestartGame);
+    }
+
     void Start()
     {
-        SoundManager.Instance.PlayMusicSound(); 
+        EventManager.Notify<GameEvent.GameStart>(); 
     }
 
-    void Update()
-    {
-        // Defense is destroyed if null 
-        if (defenseHealth == null)
-        {
-            RestartGame();
-        }
-
-        int enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        if (enemyCount <= 0)
-        {
-            RestartGame(); 
-        }
-
-        int playerCount = GameObject.FindGameObjectsWithTag("Player").Length;
-        if (playerCount != 1)
-        {
-            RestartGame(); 
-        }
-
-    }
-
-    void RestartGame()
+    private void RestartGame()
     {
         // Give time between end of game and restart 
         StartCoroutine(WaitAndRestart(restartWaitSeconds));
     }
 
-    IEnumerator WaitAndRestart(float seconds)
+    private IEnumerator WaitAndRestart(float seconds)
     {
         yield return new WaitForSeconds(seconds);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
