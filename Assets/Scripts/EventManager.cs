@@ -64,10 +64,8 @@ using UnityEngine;
 
     void SomeMethod()
     {
-        EventManager.Notify<GameEvent.EVENT-HERE>(new GameEvent.EVENT-HERE(SOME-PARAMETER)); 
+        EventManager.Notify(new GameEvent.EVENT-HERE(SOME-PARAMETER)); 
     }
-
-    
 
 
 */ 

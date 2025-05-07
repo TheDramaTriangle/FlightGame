@@ -5,7 +5,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 {
     void OnCollisionEnter(Collision collision)
     {
-        SoundManager.Instance.PlayExplosionSound(); 
+        EventManager.Notify<GameEvent.PlaneCrash>(); 
         Destroy(gameObject);
     }
 }
