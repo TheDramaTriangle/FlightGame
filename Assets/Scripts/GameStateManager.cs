@@ -5,7 +5,6 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    public DefenseHealth defenseHealth;
     public float restartWaitSeconds = 3f;
 
     void OnEnable()

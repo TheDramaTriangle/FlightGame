@@ -17,6 +17,12 @@ public class PlaneThrust : MonoBehaviour
 
     void Update()
     {
-        rb.linearVelocity = transform.forward * speed; 
+        float real_speed = speed; 
+        if (Input.GetKey(KeyCode.W))
+        {
+            real_speed += 10;; 
+        }
+        
+        rb.linearVelocity = transform.forward * real_speed; 
     }
 }
