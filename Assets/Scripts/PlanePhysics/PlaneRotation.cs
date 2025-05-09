@@ -26,5 +26,16 @@ public class PlaneRotation : MonoBehaviour
             float zRotationSpeed = rotationSpeed * Time.deltaTime; 
             transform.Rotate(0, 0, zRotationSpeed);
         }
+        if (Input.GetKey(KeyCode.A))
+        {
+            float yRotationSpeed = -rotationSpeed * Time.deltaTime; 
+            transform.Rotate(0, yRotationSpeed, 0);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            float yRotationSpeed = rotationSpeed * Time.deltaTime; 
+            transform.Rotate(0, yRotationSpeed, 0);
+        }
     }
-}
+
