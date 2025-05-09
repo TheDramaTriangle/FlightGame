@@ -1,5 +1,4 @@
 
-using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class PlaneShooter : MonoBehaviour
@@ -7,14 +6,19 @@ public class PlaneShooter : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint; 
     public float bulletSpeed = 20f;
+    public float bulletCooldown = 0.2f; 
+    private float lastShootTime = 0f; 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetKey(KeyCode.Space)) 
         {
-            Shoot();
-            EventManager.Notify<GameEvent.PlaneShoot>();
-
+            if (Time.time - lastShootTime >= bulletCooldown)
+            {
+                Shoot();
+                EventManager.Notify<GameEvent.PlaneShoot>();
+                lastShootTime = Time.time; 
+            }
         }
     }
 
