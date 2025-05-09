@@ -38,4 +38,4 @@ public class PlaneRotation : MonoBehaviour
             transform.Rotate(0, yRotationSpeed, 0);
         }
     }
-
+}
