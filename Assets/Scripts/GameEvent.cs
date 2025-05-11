@@ -54,5 +54,15 @@ namespace GameEvent
         }
     }
 
+    /* ----- SCORE EVENTS ------ */
+    public struct ScoreChanged
+    {
+        public int NewScore { get; set; }
+
+        public ScoreChanged(int newScore)
+        {
+            NewScore = newScore;
+        }
+    }
 
 }
