@@ -1,41 +1,54 @@
+
+
 using UnityEngine;
 
 public class PlaneRotation : MonoBehaviour
 {
-    public float rotationSpeed = 100f; 
+    public float rotationSpeed = 120f;
+    public float smoothTime = 0.05f;
+
+    private Quaternion targetRotation;
+
+    void Start()
+    {
+        targetRotation = transform.rotation;
+    }
 
     void Update()
     {
+        float xRotation = 0f;
+        float yRotation = 0f;
+        float zRotation = 0f;
+
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            float xRotationSpeed = -rotationSpeed * Time.deltaTime; 
-            transform.Rotate(xRotationSpeed, 0, 0);
+            xRotation = -rotationSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            float xRotationSpeed = rotationSpeed * Time.deltaTime; 
-            transform.Rotate(xRotationSpeed, 0, 0);
+            xRotation = rotationSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            float zRotationSpeed = -rotationSpeed * Time.deltaTime; 
-            transform.Rotate(0, 0, zRotationSpeed);
+            zRotation = -rotationSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            float zRotationSpeed = rotationSpeed * Time.deltaTime; 
-            transform.Rotate(0, 0, zRotationSpeed);
+            zRotation = rotationSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            float yRotationSpeed = -rotationSpeed * Time.deltaTime; 
-            transform.Rotate(0, yRotationSpeed, 0);
+            yRotation = -rotationSpeed * Time.deltaTime;
         }
-
         if (Input.GetKey(KeyCode.D))
         {
-            float yRotationSpeed = rotationSpeed * Time.deltaTime; 
-            transform.Rotate(0, yRotationSpeed, 0);
+            yRotation = rotationSpeed * Time.deltaTime;
         }
+
+        // Update the target rotation based on input
+        targetRotation *= Quaternion.Euler(xRotation, yRotation, zRotation);
+
+        // Smoothly interpolate to the target rotation
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothTime);
     }
 }
