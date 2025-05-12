@@ -26,3 +26,39 @@ public class EnemyAttack : MonoBehaviour
 
     }
 }
+// using System;
+// using UnityEngine;
+
+// public class EnemyAttack : MonoBehaviour
+// {
+//     public float attackCoolDown = 1f;
+//     public int   damageAmount   = 10;
+//     public AntAnimation animation;
+
+//     private float lastAttackTime = 0f;
+//     public event Action OnAttack;
+//     public Collider DetectSphere;
+
+//     private void OnCollisionStay(Collision collision)
+//     {
+//         if (Time.time - lastAttackTime < attackCoolDown) 
+//             return;
+
+//         if (collision.gameObject.CompareTag("Defense"))
+//         {
+//             // fire animation event
+//             Debug.Log (name+"~ Trying to attack");
+//             OnAttack?.Invoke();
+//             animation.HandleAttack();
+
+//             // deal damage
+//             collision.gameObject.GetComponent<DefenseHealth>()
+//                       .TakeDamage(damageAmount);
+//             lastAttackTime = Time.time;
+//         }
+//     }
+
+//     private void Start (){
+//         animation = GetComponent<AntAnimation>();
+//     }
+// }
