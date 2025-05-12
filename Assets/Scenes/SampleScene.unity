@@ -1171,6 +1171,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2919481556194346702, guid: 557f13dbb2a6872439b8c75bf3271c5d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919481556194346702, guid: 557f13dbb2a6872439b8c75bf3271c5d, type: 3}
       propertyPath: m_TagString
       value: Defense
       objectReference: {fileID: 0}
@@ -1785,7 +1789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6590827318118822596, guid: e7fb967bbbef6c24d9978bd5f204048e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -82.4
+      value: -102.63
       objectReference: {fileID: 0}
     - target: {fileID: 6590827318118822596, guid: e7fb967bbbef6c24d9978bd5f204048e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3380,7 +3384,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 25
-  deathDelay: 1
 --- !u!114 &1145504891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3408,8 +3411,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCoolDown: 1
   damageAmount: 10
-  animation: {fileID: 0}
-  DetectSphere: {fileID: 0}
 --- !u!64 &1145504893
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3466,6 +3467,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11b78f42437d44339958fa17ec601fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _anim: {fileID: 0}
+  _agent: {fileID: 0}
+  _attack: {fileID: 0}
+  _health: {fileID: 0}
+  _isDead: 0
 --- !u!65 &1145504898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6132,7 +6138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 954938912157715204, guid: 06fd695baf71749c78b46f2e39809ebc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4909137571728602316, guid: 06fd695baf71749c78b46f2e39809ebc, type: 3}
       propertyPath: m_LocalScale.x
@@ -6278,7 +6284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8424168720983181876, guid: 6b4a9e4938208df1cbdbdf1468064f4d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
