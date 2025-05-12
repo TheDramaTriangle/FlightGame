@@ -6,6 +6,7 @@ public class UIManager: MonoBehaviour
 {
     public TextMeshProUGUI defenseText;
     public TextMeshProUGUI enemyText;
+    public TextMeshProUGUI ScoreText;
 
     void OnEnable()
     {
@@ -16,6 +17,7 @@ public class UIManager: MonoBehaviour
         EventManager.Subscribe<GameEvent.DefenseSpawned>(DisplayDefenseHealth);
         EventManager.Subscribe<GameEvent.DefenseDamaged>(DisplayDefenseHealth);
         EventManager.Subscribe<GameEvent.DefenseDestroyed>(DisplayDefenseDestroyed); 
+        EventManager.Subscribe<GameEvent.ScoreChanged>(DisplayScore); 
     }
     void OnDisable()
     {
@@ -24,7 +26,8 @@ public class UIManager: MonoBehaviour
         EventManager.Unsubscribe<GameEvent.AllEnemiesDead>(DisplayEnemiesDead); 
 
         EventManager.Unsubscribe<GameEvent.DefenseDamaged>(DisplayDefenseHealth);
-        EventManager.Unsubscribe<GameEvent.DefenseDestroyed>(DisplayDefenseDestroyed); 
+        EventManager.Unsubscribe<GameEvent.DefenseDestroyed>(DisplayDefenseDestroyed);
+        EventManager.Unsubscribe<GameEvent.ScoreChanged>(DisplayScore); 
     }
 
     void DisplayEnemyNum(GameEvent.EnemyDied ev)
@@ -53,5 +56,10 @@ public class UIManager: MonoBehaviour
     void DisplayDefenseDestroyed()
     {
         defenseText.text = "Defense destroyed!";
+    }
+
+    void DisplayScore(GameEvent.ScoreChanged ev)
+    {
+        ScoreText.text = "Score: " + ev.NewScore;
     }
 }

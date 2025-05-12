@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour
 
     private void RestartGame()
     {
-        // Give time between end of game and restart 
+        // Give time between end of game and restart
+        ScoreManager.Instance.ResetScore();
         StartCoroutine(WaitAndRestart(restartWaitSeconds));
     }
 
