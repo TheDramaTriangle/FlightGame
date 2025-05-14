@@ -6,7 +6,7 @@ public class CameraFollowPlane : MonoBehaviour
 */
 {
     public Transform playerPlane;  
-    public Vector3 offset = new(0, 1, -3); 
+    public Vector3 offset = new(0, 3, -3.5f); 
     public float smoothSpeed = 3f; 
 
     void LateUpdate()
