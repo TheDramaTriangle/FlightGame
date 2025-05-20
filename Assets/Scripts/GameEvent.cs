@@ -11,10 +11,12 @@ namespace GameEvent
     /* ------- PLANE EVENTS ------- */ 
     public struct PlaneShoot {} 
 
-    public struct PlaneCrash {} 
+    public struct PlaneCrash {}
 
-    /* ------- GAME STATE EVENTS ------ */ 
-    public struct GameStart {} 
+    public struct Explosion {}
+
+    /* ------- GAME STATE EVENTS ------ */
+    public struct GameStart { } 
 
     /* ------- ENEMY EVENTS ------- */ 
     public struct EnemyDied 
