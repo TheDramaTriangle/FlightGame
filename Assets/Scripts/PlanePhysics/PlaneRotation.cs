@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlaneRotation : MonoBehaviour
 {
-    public float rotationSpeed = 120f;
+    public float rotationSpeed = 100f;
     public float smoothTime = 0.04f;
     public float turnSpeed = 10f;
 
