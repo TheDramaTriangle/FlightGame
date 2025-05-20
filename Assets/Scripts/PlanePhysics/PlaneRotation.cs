@@ -1,11 +1,11 @@
-
-
+using System;
 using UnityEngine;
 
 public class PlaneRotation : MonoBehaviour
 {
     public float rotationSpeed = 120f;
-    public float smoothTime = 0.05f;
+    public float smoothTime = 0.04f;
+    public float turnSpeed = 10f;
 
     private Quaternion targetRotation;
 
@@ -16,6 +16,7 @@ public class PlaneRotation : MonoBehaviour
 
     void Update()
     {
+
         float xRotation = 0f;
         float yRotation = 0f;
         float zRotation = 0f;
@@ -30,19 +31,19 @@ public class PlaneRotation : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            zRotation = -rotationSpeed * Time.deltaTime;
+            yRotation = rotationSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            zRotation = rotationSpeed * Time.deltaTime;
+            yRotation = -rotationSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            yRotation = -rotationSpeed * Time.deltaTime;
+            zRotation = rotationSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            yRotation = rotationSpeed * Time.deltaTime;
+            zRotation = -rotationSpeed * Time.deltaTime;
         }
 
         // Update the target rotation based on input

@@ -1,19 +1,22 @@
 using GameEvent;
 using UnityEngine;
 
-public class GlobalEnemyState : MonoBehaviour
+public class EnemyCountUpdater: MonoBehaviour
 {
-    private static int enemiesRemaining = 0; 
+    private static int enemiesRemaining = 0;
 
     void Start()
     {
-        enemiesRemaining++; 
+        enemiesRemaining++;
         EventManager.Notify(new GameEvent.EnemySpawned(enemiesRemaining));
     }
 
     void OnDisable()
     {
-        enemiesRemaining--; 
+        if (enemiesRemaining > 0)
+        {
+            enemiesRemaining--;
+        }
         if (enemiesRemaining != 0)
         {
             EventManager.Notify(new GameEvent.EnemyDied(enemiesRemaining));
@@ -23,4 +26,5 @@ public class GlobalEnemyState : MonoBehaviour
             EventManager.Notify<GameEvent.AllEnemiesDead>();
         }
     }
+
 }

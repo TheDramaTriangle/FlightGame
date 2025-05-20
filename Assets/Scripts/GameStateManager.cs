@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        EventManager.Notify<GameEvent.GameStart>(); 
+        EventManager.Notify<GameEvent.GameStart>();
     }
 
     private void RestartGame()
