@@ -15,12 +15,8 @@ namespace GameEvent
 
     /* ------- GAME STATE EVENTS ------ */
     public struct GameStart { }
-    public struct PlaneCrash {}
 
     public struct Explosion {}
-
-    /* ------- GAME STATE EVENTS ------ */
-    public struct GameStart { } 
 
     /* ------- ENEMY EVENTS ------- */
     public struct EnemyDied
