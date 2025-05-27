@@ -8,49 +8,49 @@
 namespace GameEvent
 {
 
-    /* ------- PLANE EVENTS ------- */ 
-    public struct PlaneShoot {} 
+    /* ------- PLANE EVENTS ------- */
+    public struct PlaneShoot { }
 
-    public struct PlaneCrash {} 
+    public struct PlaneCrash { }
 
-    /* ------- GAME STATE EVENTS ------ */ 
-    public struct GameStart {} 
+    /* ------- GAME STATE EVENTS ------ */
+    public struct GameStart { }
 
-    /* ------- ENEMY EVENTS ------- */ 
-    public struct EnemyDied 
+    /* ------- ENEMY EVENTS ------- */
+    public struct EnemyDied
     {
-        public int EnemiesRemaining {get; set;}
+        public int EnemiesRemaining { get; set; }
         public EnemyDied(int num)
         {
-            EnemiesRemaining = num; 
+            EnemiesRemaining = num;
         }
     }
-    public struct EnemySpawned 
+    public struct EnemySpawned
     {
-        public int EnemiesRemaining {get; set;}
+        public int EnemiesRemaining { get; set; }
         public EnemySpawned(int num)
         {
-            EnemiesRemaining = num; 
+            EnemiesRemaining = num;
         }
     }
-    public struct AllEnemiesDead {}
+    public struct AllEnemiesDead { }
 
-    /* ----- DEFENSE EVENTS ------ */ 
-    public struct DefenseDestroyed {} 
+    /* ----- DEFENSE EVENTS ------ */
+    public struct DefenseDestroyed { }
     public struct DefenseDamaged
     {
-        public int HealthRemaining {get; set;}
+        public int HealthRemaining { get; set; }
         public DefenseDamaged(int num)
         {
-            HealthRemaining = num; 
+            HealthRemaining = num;
         }
     }
     public struct DefenseSpawned
     {
-        public int Health{get; set;}
+        public int Health { get; set; }
         public DefenseSpawned(int num)
         {
-            Health = num; 
+            Health = num;
         }
     }
 
@@ -62,6 +62,17 @@ namespace GameEvent
         public ScoreChanged(int newScore)
         {
             NewScore = newScore;
+        }
+    }
+
+    /* ----- Player Damaged ------ */
+    public struct PlayerDamaged
+    {
+        public int Health { get; set; }
+
+        public PlayerDamaged(int NewHealth)
+        {
+            Health = NewHealth;
         }
     }
 

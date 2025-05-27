@@ -2,13 +2,19 @@ using UnityEngine;
 
 public class PlaneRotation : MonoBehaviour
 {
-    public float rotationSpeed = 100f; 
+    public float rotationSpeed = 100f;
+    public float fallSpeed = 25f;
 
     void Update()
     {
+        if (PlayerHealth.Instance.isDead)
+        {
+            float xRotationSpeed = -fallSpeed * Time.deltaTime;
+            return;
+        }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            float xRotationSpeed = -rotationSpeed * Time.deltaTime; 
+            float xRotationSpeed = -rotationSpeed * Time.deltaTime;
             transform.Rotate(xRotationSpeed, 0, 0);
         }
         if (Input.GetKey(KeyCode.DownArrow))

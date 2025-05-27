@@ -9,14 +9,14 @@ public class GameManager : MonoBehaviour
 
     void OnEnable()
     {
-        EventManager.Subscribe<GameEvent.PlaneCrash>(RestartGame);
+        EventManager.Subscribe<GameEvent.PlaneCrash>(GameOver);
         EventManager.Subscribe<GameEvent.DefenseDestroyed>(RestartGame);
         EventManager.Subscribe<GameEvent.AllEnemiesDead>(RestartGame);
     }
 
     void OnDisable()
     {
-        EventManager.Unsubscribe<GameEvent.PlaneCrash>(RestartGame);
+        EventManager.Unsubscribe<GameEvent.PlaneCrash>(GameOver);
         EventManager.Unsubscribe<GameEvent.DefenseDestroyed>(RestartGame);
         EventManager.Unsubscribe<GameEvent.AllEnemiesDead>(RestartGame);
     }
@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         EventManager.Notify<GameEvent.GameStart>(); 
+    }
+
+    private void GameOver()
+    {
+        GameOverScreen.Instance.Setup(ScoreManager.Instance.CurrentScore);
     }
 
     private void RestartGame()
