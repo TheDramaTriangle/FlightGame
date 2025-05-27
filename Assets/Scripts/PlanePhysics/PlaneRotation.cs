@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlaneRotation : MonoBehaviour
 {
     public float rotationSpeed = 100f;
+    public float fallSpeed = 25f;
+
     public float smoothTime = 0.04f;
     public float turnSpeed = 10f;
 
@@ -20,6 +22,12 @@ public class PlaneRotation : MonoBehaviour
         float xRotation = 0f;
         float yRotation = 0f;
         float zRotation = 0f;
+        
+        if (PlayerHealth.Instance.isDead)
+        {
+            float xRotationSpeed = -fallSpeed * Time.deltaTime;
+            return;
+        }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {

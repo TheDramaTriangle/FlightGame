@@ -4,7 +4,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance { get; private set; }
 
-    private int CurrentScore = 0;
+    public int CurrentScore = 0;
 
     void Awake()
     {

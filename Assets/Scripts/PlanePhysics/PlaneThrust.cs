@@ -17,6 +17,12 @@ public class PlaneThrust : MonoBehaviour
 
     void Update()
     {
+        if(PlayerHealth.Instance.isDead)
+        {
+            transform.Translate(Vector3.down * 16.0f * Time.deltaTime);
+            return;
+        }
+
         float real_speed = speed; 
         if (Input.GetKey(KeyCode.W))
         {
