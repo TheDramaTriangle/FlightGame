@@ -2,24 +2,19 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public static PlayerHealth Instance { get; private set; }
     public int maxHealth = 100;
     private int currentHealth;
-    public bool isDead { get; private set; }
+    public bool IsDead { get; private set; }
 
-    private void Awake()
-    {
-        Instance = this;
-    }
     private void Start()
     {
         currentHealth = maxHealth;
-        isDead = false;
+        IsDead = false;
     }
 
     public void TakeDamage(int amount)
     {
-        if (isDead) return;
+        if (IsDead) return;
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
@@ -37,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        isDead = true;
+        IsDead = true;
         Debug.Log("Plane is destroyed — crash!");
     }
 

@@ -17,7 +17,9 @@ public class PlaneThrust : MonoBehaviour
 
     void Update()
     {
-        if(PlayerHealth.Instance.isDead)
+        PlayerHealth playerHealth = GetComponent<PlayerHealth>();
+
+        if(playerHealth.IsDead)
         {
             transform.Translate(Vector3.down * 16.0f * Time.deltaTime);
             return;

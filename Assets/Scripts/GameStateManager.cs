@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        GameOverScreen.Instance.Setup(ScoreManager.Instance.CurrentScore);
+        RestartGame(); 
     }
 
     private void RestartGame()

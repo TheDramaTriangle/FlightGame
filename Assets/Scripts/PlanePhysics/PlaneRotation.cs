@@ -22,36 +22,39 @@ public class PlaneRotation : MonoBehaviour
         float xRotation = 0f;
         float yRotation = 0f;
         float zRotation = 0f;
-        
-        if (PlayerHealth.Instance.isDead)
-        {
-            float xRotationSpeed = -fallSpeed * Time.deltaTime;
-            return;
-        }
 
-        if (Input.GetKey(KeyCode.UpArrow))
+        PlayerHealth playerHealth = GetComponent<PlayerHealth>();
+
+        if (playerHealth.IsDead)
         {
-            xRotation = -rotationSpeed * Time.deltaTime;
+            xRotation = -fallSpeed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        else
         {
-            xRotation = rotationSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            yRotation = rotationSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            yRotation = -rotationSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            zRotation = rotationSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            zRotation = -rotationSpeed * Time.deltaTime;
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                xRotation = -rotationSpeed * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                xRotation = rotationSpeed * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                yRotation = rotationSpeed * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                yRotation = -rotationSpeed * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                zRotation = rotationSpeed * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                zRotation = -rotationSpeed * Time.deltaTime;
+            }
         }
 
         // Update the target rotation based on input

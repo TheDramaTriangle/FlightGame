@@ -59,6 +59,9 @@ public class FlyingEnemyAI : MonoBehaviour
 
     private void Update()
     {
+        if (player == null)
+            return; 
+
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         // Check if player is within detection range
@@ -130,9 +133,9 @@ public class FlyingEnemyAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && PlayerHealth.Instance != null)
+        if (other.CompareTag("Player"))
         {
-            PlayerHealth.Instance.TakeDamage(10);
+            other.gameObject.GetComponent<PlayerHealth>().TakeDamage(10);
         }
     }
 }
