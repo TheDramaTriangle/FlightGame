@@ -5,7 +5,7 @@ public class PlaneShooter : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform firePoint; 
-    public float bulletSpeed = 20f;
+    public float bulletSpeed = 200f;
     public float bulletCooldown = 0.2f; 
     private float lastShootTime = 0f; 
 

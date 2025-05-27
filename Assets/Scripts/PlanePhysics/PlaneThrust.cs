@@ -28,7 +28,7 @@ public class PlaneThrust : MonoBehaviour
         {
             real_speed += 10;; 
         }
-        
+
         rb.linearVelocity = transform.forward * real_speed; 
     }
 }

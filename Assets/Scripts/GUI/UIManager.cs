@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
 
     void DisplayEnemiesDead()
     {
-        enemyText.text = "All enimies defeated!";
+        enemyText.text = "All Enemies defeated!";
     }
 
     void DisplayDefenseHealth(GameEvent.DefenseDamaged ev)

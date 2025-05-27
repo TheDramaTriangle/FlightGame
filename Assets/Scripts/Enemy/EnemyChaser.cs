@@ -4,8 +4,16 @@ using UnityEngine.AI;
 
 public class EnemyChaser : MonoBehaviour
 {
-    public Transform target; 
+    public Transform target;
     private NavMeshAgent agent;
+
+    void SetNewTarget(Transform newTarget)
+    {
+        if (newTarget != null)
+        {
+            agent.SetDestination(newTarget.position);
+        }
+    }
 
     void Start()
     {
@@ -15,5 +23,5 @@ public class EnemyChaser : MonoBehaviour
             agent.SetDestination(target.position);
         }
     }
-
+   
 }
