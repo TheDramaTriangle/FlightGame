@@ -39,15 +39,14 @@ public class FlyingEnemyAI : MonoBehaviour
     public float speed = 15f;
     public float detectionRange = 100f;
     public float stoppingDistance = 0.01f;
-
     public float wanderSpeed = 6f;
     public float wanderRadius = 100f;
     public float directionChangeInterval = 3f;
     public Transform centerPoint;
-
     private Vector3 wanderDirection;
     private float directionTimer;
     private bool chasingPlayer = false;
+    public GameObject explosionEffect; 
 
     private void Start()
     {
@@ -60,7 +59,14 @@ public class FlyingEnemyAI : MonoBehaviour
     private void Update()
     {
         if (player == null)
-            return; 
+            return;
+
+        FlyingEnemyHealth enemyHealth = GetComponent<FlyingEnemyHealth>();
+        if (enemyHealth.IsDead)
+        {
+            Instantiate(explosionEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 

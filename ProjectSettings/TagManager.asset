@@ -8,6 +8,7 @@ TagManager:
   - Defense
   - Enemy
   - Bullet
+  - FlyingEnemy
   layers:
   - Default
   - TransparentFX

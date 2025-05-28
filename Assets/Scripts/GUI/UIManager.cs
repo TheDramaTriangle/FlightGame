@@ -68,6 +68,7 @@ public class UIManager : MonoBehaviour
 
     void DisplayHealth(GameEvent.PlayerDamaged ev)
     {
-        HealthText.text = "Health: " + ev.Health;
+        return;
+        // HealthText.text = "Health: " + ev.Health;
     }
 }

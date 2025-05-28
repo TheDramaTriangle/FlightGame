@@ -33,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         IsDead = true;
-        Debug.Log("Plane is destroyed — crash!");
+        Debug.Log("Player is dead");
     }
 
     public int GetCurrentHealth()
