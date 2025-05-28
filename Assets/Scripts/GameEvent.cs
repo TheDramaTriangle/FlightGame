@@ -41,18 +41,20 @@ namespace GameEvent
     public struct DefenseDestroyed { }
     public struct DefenseDamaged
     {
-        public int HealthRemaining { get; set; }
-        public DefenseDamaged(int num)
+        public float HealthPercentage { get; set; }
+        public string Name { get; set; }
+        public DefenseDamaged(float healthPercentage, string name)
         {
-            HealthRemaining = num;
+            HealthPercentage = healthPercentage;
+            Name = name; 
         }
     }
     public struct DefenseSpawned
     {
-        public int Health { get; set; }
-        public DefenseSpawned(int num)
+        public string Name { get; set; }
+        public DefenseSpawned(string name)
         {
-            Health = num;
+            Name = name; 
         }
     }
 
