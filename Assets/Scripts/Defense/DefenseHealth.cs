@@ -1,27 +1,29 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class DefenseHealth : MonoBehaviour
 {
-    public int health = 500; 
+    public const int health = 500; 
+    private int currentHealth; 
+    public string defenseName; 
 
     void Start()
     {
-        EventManager.Notify(new GameEvent.DefenseSpawned(health));
+        currentHealth = health; 
+        EventManager.Notify(new GameEvent.DefenseSpawned(defenseName));
     }
-
 
     public void TakeDamage(int damageAmount)
     {
-        health -= damageAmount; 
-        if (health <= 0)
+        currentHealth -= damageAmount; 
+        if (currentHealth <= 0)
         {
             Destroy(gameObject);
             EventManager.Notify<GameEvent.DefenseDestroyed>(); 
         }
         else
         {
-            EventManager.Notify(new GameEvent.DefenseDamaged(health));
+            float healthPercentage = (float)currentHealth / (float)health; 
+            EventManager.Notify(new GameEvent.DefenseDamaged(healthPercentage, defenseName));
         }
     }
 }

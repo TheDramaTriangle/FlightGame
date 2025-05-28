@@ -15,9 +15,6 @@ public class UIManager : MonoBehaviour
         EventManager.Subscribe<GameEvent.EnemySpawned>(DisplayEnemyNum);
         EventManager.Subscribe<GameEvent.AllEnemiesDead>(DisplayEnemiesDead);
 
-        EventManager.Subscribe<GameEvent.DefenseSpawned>(DisplayDefenseHealth);
-        EventManager.Subscribe<GameEvent.DefenseDamaged>(DisplayDefenseHealth);
-        EventManager.Subscribe<GameEvent.DefenseDestroyed>(DisplayDefenseDestroyed);
         EventManager.Subscribe<GameEvent.ScoreChanged>(DisplayScore);
         EventManager.Subscribe<GameEvent.PlayerDamaged>(DisplayHealth);
     }
@@ -27,8 +24,6 @@ public class UIManager : MonoBehaviour
         EventManager.Unsubscribe<GameEvent.EnemySpawned>(DisplayEnemyNum);
         EventManager.Unsubscribe<GameEvent.AllEnemiesDead>(DisplayEnemiesDead);
 
-        EventManager.Unsubscribe<GameEvent.DefenseDamaged>(DisplayDefenseHealth);
-        EventManager.Unsubscribe<GameEvent.DefenseDestroyed>(DisplayDefenseDestroyed);
         EventManager.Unsubscribe<GameEvent.ScoreChanged>(DisplayScore);
         EventManager.Unsubscribe<GameEvent.PlayerDamaged>(DisplayHealth);
     }
@@ -45,20 +40,6 @@ public class UIManager : MonoBehaviour
     void DisplayEnemiesDead()
     {
         enemyText.text = "All Enemies defeated!";
-    }
-
-    void DisplayDefenseHealth(GameEvent.DefenseDamaged ev)
-    {
-        defenseText.text = "Defense Health: " + ev.HealthRemaining.ToString();
-    }
-    void DisplayDefenseHealth(GameEvent.DefenseSpawned ev)
-    {
-        defenseText.text = "Defense Health: " + ev.Health.ToString();
-    }
-
-    void DisplayDefenseDestroyed()
-    {
-        defenseText.text = "Defense destroyed!";
     }
 
     void DisplayScore(GameEvent.ScoreChanged ev)
