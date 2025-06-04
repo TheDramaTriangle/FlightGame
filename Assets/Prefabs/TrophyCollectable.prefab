@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 116138922091867150, guid: 5b76138354f9f9047b839642905553e0, type: 3}
       propertyPath: m_Name
-      value: trophy_collectible Variant
+      value: TrophyCollectable
       objectReference: {fileID: 0}
     - target: {fileID: 781175624161146548, guid: 5b76138354f9f9047b839642905553e0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 781175624161146548, guid: 5b76138354f9f9047b839642905553e0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 781175624161146548, guid: 5b76138354f9f9047b839642905553e0, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 781175624161146548, guid: 5b76138354f9f9047b839642905553e0, type: 3}
       propertyPath: m_LocalPosition.x
