@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8446556157829766345, guid: 7c5d38133acbce14d8c762846a201620, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8446556157829766345, guid: 7c5d38133acbce14d8c762846a201620, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8446556157829766345, guid: 7c5d38133acbce14d8c762846a201620, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8446556157829766345, guid: 7c5d38133acbce14d8c762846a201620, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9111875778792162931, guid: 7c5d38133acbce14d8c762846a201620, type: 3}
       propertyPath: m_Name
-      value: Collectable_Star_01 Variant
+      value: StarCollectable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7478699725167668191, guid: 6d234b6816398f341a9197c06c250f89, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 7478699725167668191, guid: 6d234b6816398f341a9197c06c250f89, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 7478699725167668191, guid: 6d234b6816398f341a9197c06c250f89, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 7478699725167668191, guid: 6d234b6816398f341a9197c06c250f89, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7818949798074937701, guid: 6d234b6816398f341a9197c06c250f89, type: 3}
       propertyPath: m_Name
-      value: Collectable_Gem_01 (2) Variant
+      value: GemCollectable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
