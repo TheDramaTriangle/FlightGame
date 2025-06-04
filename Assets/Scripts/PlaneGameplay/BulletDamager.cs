@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BulletDamager : MonoBehaviour
 {
-    public int bulletDamage = 10; 
+    public int bulletDamage = 20; 
     public GameObject explosionEffect; 
 
     void OnCollisionEnter(Collision collision)
@@ -11,11 +11,6 @@ public class BulletDamager : MonoBehaviour
         {
             GameObject enemy = collision.gameObject;
             enemy.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
-        }
-        else if (collision.gameObject.CompareTag("FlyingEnemy"))
-        {
-            GameObject enemy = collision.gameObject;
-            enemy.GetComponent<FlyingEnemyHealth>().TakeDamage(bulletDamage);
         }
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);

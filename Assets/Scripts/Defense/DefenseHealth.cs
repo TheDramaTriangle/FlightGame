@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DefenseHealth : MonoBehaviour
 {
-    public const int health = 50000; //temporary change for testing (original: 500) 
+    public const int health = 500; //temporary change for testing (original: 500) 
     private int currentHealth; 
     public string defenseName; 
 

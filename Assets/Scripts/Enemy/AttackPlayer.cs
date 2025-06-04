@@ -27,13 +27,6 @@ public class FlyingEnemyAI : MonoBehaviour
         if (player == null)
             return;
 
-        FlyingEnemyHealth enemyHealth = GetComponent<FlyingEnemyHealth>();
-        if (enemyHealth.IsDead)
-        {
-            Instantiate(explosionEffect, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }
-
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         // Check if player is within detection range
@@ -87,16 +80,5 @@ public class FlyingEnemyAI : MonoBehaviour
         }
 
         Debug.Log($"Patrolling to {targetPoint.name} - Distance: {distanceToPoint}");
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Hit Test");
-            other.gameObject.GetComponent<PlayerHealth>().TakeDamage(10);
-            coolDown = coolDowninterval;
-        }
     }
 }

@@ -2,6 +2,6 @@ using UnityEngine;
 
 public static class UnlockedUpgrades 
 {
-    public static bool isBombUnlocked = true; 
-    public static bool isSlowTimeUnlocked = true; 
+    public static bool isBombUnlocked = false; 
+    public static bool isSlowTimeUnlocked = false; 
 }
