@@ -64,7 +64,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5129505049687600200, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -76,19 +77,13 @@ PrefabInstance:
       addedObject: {fileID: 7733174084414431493}
     - targetCorrespondingSourceObject: {fileID: 269850356080666488, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6552520454004648595}
-    - targetCorrespondingSourceObject: {fileID: 269850356080666488, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4170332007485964202}
-    - targetCorrespondingSourceObject: {fileID: 269850356080666488, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3331958484713697520}
-    - targetCorrespondingSourceObject: {fileID: 269850356080666488, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6438560656972915043}
     - targetCorrespondingSourceObject: {fileID: 269850356080666488, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3648259630672903322}
+      addedObject: {fileID: 6988331542016370691}
+    - targetCorrespondingSourceObject: {fileID: 269850356080666488, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6089381065911641564}
   m_SourcePrefab: {fileID: 100100000, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
 --- !u!1 &2761616727947901490 stripped
 GameObject:
@@ -143,59 +138,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!195 &6552520454004648595
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2761616727947901490}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 6
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &4170332007485964202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2761616727947901490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad4e9055414ff5b8081ab30d429dda9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCoolDown: 1
-  damageAmount: 10
-  animation: {fileID: 0}
-  NavAgent: {fileID: 0}
-  tolerance: 2
-  targetFinder: {fileID: 0}
---- !u!114 &3331958484713697520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2761616727947901490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f43e614350d7d9ba3b8fafae2baa2a54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!114 &6438560656972915043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439f1b7f95ef1764b87cf9e360055f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3648259630672903322
+--- !u!114 &6988331542016370691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,14 +159,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 2761616727947901490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43284d004824a432591ab4bed54ecfda, type: 3}
+  m_Script: {fileID: 11500000, guid: 31ae5e4df9f404cc2ba84394770192df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+--- !u!114 &6089381065911641564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761616727947901490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3436a56f4222148f48ecb413b4c64cf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 5
-  detectionRange: 15
-  stoppingDistance: 2
-  wanderSpeed: 3
-  wanderRadius: 20
+  speed: 25
+  detectionRange: 100
+  stoppingDistance: 0.01
+  wanderSpeed: 15
+  wanderRadius: 100
   directionChangeInterval: 3
   centerPoint: {fileID: 0}
+  patrolpoints: []
+  explosionEffect: {fileID: 0}
+  rb: {fileID: 0}
