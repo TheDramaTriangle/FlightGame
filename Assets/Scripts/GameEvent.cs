@@ -18,6 +18,8 @@ namespace GameEvent
 
     public struct Explosion {}
 
+    public struct ExitGame {} 
+
     /* ------- ENEMY EVENTS ------- */
     public struct EnemyDied
     {

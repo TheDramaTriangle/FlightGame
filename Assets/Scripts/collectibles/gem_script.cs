@@ -14,7 +14,7 @@ public class RotatingGem : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Ensure your plane is tagged "Player"
         {
-            ScoreManager.Instance.AddScore(20);
+            ScoreManager.AddScore(20);
             Destroy(gameObject);
         }
     }

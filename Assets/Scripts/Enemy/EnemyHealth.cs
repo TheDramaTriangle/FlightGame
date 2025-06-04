@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public int health;
     public event Action OnDeath;
     public Image healthBar; 
+    public AudioSource deathSound; 
 
     // optional: set this in inspector if you don't want to
     // hard-code the death clip length
@@ -29,6 +30,7 @@ public class EnemyHealth : MonoBehaviour
             OnDeath?.Invoke();
 
             // delay actual destruction to let the death animation play
+            deathSound.Play(); 
             Destroy(gameObject, deathDelay);
         }
     }

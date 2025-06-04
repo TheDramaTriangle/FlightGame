@@ -14,7 +14,7 @@ public class RotatingStar : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Ensure your plane is tagged "Player"
         {
-            ScoreManager.Instance.AddScore(15);
+            ScoreManager.AddScore(15);
             Destroy(gameObject);
         }
     }

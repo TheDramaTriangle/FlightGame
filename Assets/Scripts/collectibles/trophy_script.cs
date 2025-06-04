@@ -14,7 +14,7 @@ public class RotatingTrophy : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Ensure your plane is tagged "Player"
         {
-            ScoreManager.Instance.AddScore(10);
+            ScoreManager.AddScore(10);
             Destroy(gameObject);
 
         }

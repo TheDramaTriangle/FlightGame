@@ -2,35 +2,22 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance { get; private set; }
 
-    public int CurrentScore = 0;
+    public static int currentScore = 999;
 
-    void Awake()
+    void Start()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject); // optional if you want it to persist
+        EventManager.Notify(new GameEvent.ScoreChanged(currentScore));
     }
 
-    public void AddScore(int amount)
+    public static void AddScore(int amount)
     {
-        CurrentScore += amount;
-        EventManager.Notify(new GameEvent.ScoreChanged(CurrentScore));
+        currentScore += amount;
+        EventManager.Notify(new GameEvent.ScoreChanged(currentScore));
     }
 
-    public int GetScore()
+    public static void ResetScore()
     {
-        return CurrentScore;
-    }
-
-    public void ResetScore()
-    {
-        CurrentScore = 0;
+        currentScore = 0;
     }
 }

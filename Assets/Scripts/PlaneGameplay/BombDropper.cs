@@ -8,6 +8,14 @@ public class BombDropper : MonoBehaviour
     public float bombCooldown = 5f; 
     private float lastBombTime = 0f; 
 
+    void Start()
+    {
+        if (!UnlockedUpgrades.isBombUnlocked)
+        {
+            this.enabled = false; 
+        }
+    }
+
     void Update()
     {
         if (Input.GetKey(KeyCode.R)) 
