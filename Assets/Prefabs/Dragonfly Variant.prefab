@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 645531885963001282, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.4
+      value: -64.06
       objectReference: {fileID: 0}
     - target: {fileID: 645531885963001282, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.4
+      value: 25.42898
       objectReference: {fileID: 0}
     - target: {fileID: 645531885963001282, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -36.2
+      value: 188.86
       objectReference: {fileID: 0}
     - target: {fileID: 645531885963001282, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42,15 +42,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 645531885963001282, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 645531885963001282, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 645531885963001282, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 645531885963001282, guid: 1eb7657dc7c6c644497acdf3124908da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -105,12 +105,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2, y: 2, z: 3}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!54 &7733174084414431493
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -176,13 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 25
+  speed: 10
   detectionRange: 100
   stoppingDistance: 0.01
   wanderSpeed: 15
-  wanderRadius: 100
-  directionChangeInterval: 3
-  centerPoint: {fileID: 0}
-  patrolpoints: []
-  explosionEffect: {fileID: 0}
+  coolDowninterval: 4
+  coolDown: 0
+  patrolPoints: []
+  explosionEffect: {fileID: 1620140131458704099, guid: 57e5b83dfee152a47aedf7d83c83e9f5, type: 3}
   rb: {fileID: 0}

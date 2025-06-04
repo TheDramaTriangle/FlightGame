@@ -14,7 +14,6 @@ public class BulletDamager : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("FlyingEnemy"))
         {
-            Debug.Log("Collided with object tagged: " + collision.gameObject.tag);
             GameObject enemy = collision.gameObject;
             enemy.GetComponent<FlyingEnemyHealth>().TakeDamage(bulletDamage);
         }
