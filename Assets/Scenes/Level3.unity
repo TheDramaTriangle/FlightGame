@@ -14870,6 +14870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dragonfly Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2761616727947901490, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3249605949394788488, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.17
@@ -14880,7 +14884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3249605949394788488, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 188.86
+      value: 226.81
       objectReference: {fileID: 0}
     - target: {fileID: 3249605949394788488, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14910,14 +14914,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3276591877755223084, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146430836888637863, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
+      propertyPath: MinDistance
+      value: 0.23561859
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089381065911641564, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6089381065911641564, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1865261415}
-    - target: {fileID: 6089381065911641564, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
-      propertyPath: explosionEffect
-      value: 
-      objectReference: {fileID: 1620140131458704099, guid: 57e5b83dfee152a47aedf7d83c83e9f5, type: 3}
+    - target: {fileID: 7405737930083211107, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
+      propertyPath: m_Center.z
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36810,17 +36826,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dragonfly Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2761616727947901490, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3249605949394788488, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -64.06
       objectReference: {fileID: 0}
     - target: {fileID: 3249605949394788488, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25.42898
+      value: 24.2
       objectReference: {fileID: 0}
     - target: {fileID: 3249605949394788488, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 188.86
+      value: 207.6
       objectReference: {fileID: 0}
     - target: {fileID: 3249605949394788488, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -36850,6 +36870,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3276591877755223084, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146430836888637863, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089381065911641564, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6089381065911641564, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
       propertyPath: player
       value: 
@@ -36858,6 +36890,14 @@ PrefabInstance:
       propertyPath: explosionEffect
       value: 
       objectReference: {fileID: 1620140131458704099, guid: 57e5b83dfee152a47aedf7d83c83e9f5, type: 3}
+    - target: {fileID: 7405737930083211107, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405737930083211107, guid: 2b1a3a34edbf3e056969a321fbe6820c, type: 3}
+      propertyPath: m_Center.y
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
